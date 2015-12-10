@@ -1,0 +1,47 @@
+extends layout
+
+block content
+  h1= title
+  .row
+    .col-md-12
+      p Welcome to #{title}
+  form(name='search-form')#search.form-inline
+    .form-group
+      label(for='firstName') First Name
+      input(type='text', name='firstName').form-control
+    .form-group
+      label(for='lastName') Last Name
+      input(type='text', name='lastName').form-control
+    .form-group
+      label(for='location') Location
+      input(type='text', name='location').form-control
+    .form-group
+      label(for='skills') Skills
+      input(type='text', name='skills').form-control
+    button(type='submit').btn.btn-primary Search
+  article
+    h2 Matching Applicants
+    main.listing
+    script(type='text/x-handlebars-template')#list
+      table.table
+        tr
+          th First Name
+          th Last Name
+          th Desired Location
+          th Last Employer
+          th Skills
+        {{#each applicants}}
+        tr
+          td {{firstName}}
+          td {{lastName}}
+          td {{desiredLocation}}
+          td {{employer}}
+          td
+            ul
+              {{#each skills}}
+              li {{this}}
+              {{/each}}
+        {{/each}}
+  footer.row
+    .col-md-12
+      p.text-center.text-muted= incorporation

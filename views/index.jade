@@ -1,0 +1,95 @@
+extends layout
+
+block content
+  h1= title
+  .row
+    .col-md-10
+      p Welcome to #{title}
+    .col-md-2
+      a(href='/admin')
+        button.btn.btn-default.btn-block Admin
+  form(name='applicant-form')#application
+    .form-group
+      label(for='firstName').control-label First Name
+      input(type='text', name='firstName', required).form-control
+    .form-group
+      label(for='lastName').control-label Last Name
+      input(type='text', name='lastName', required).form-control
+    .form-group
+      label(for='desiredJob').control-label Desired Job
+      input(type='text', name='desiredJob', required).form-control
+    fieldset
+      legend='Desired Location'
+      .radio
+        label
+          input(type='radio', name='desiredLocation', value='remote')
+          | Remote
+      .radio
+        label
+          input(type='radio', name='desiredLocation', value='specific')
+          | Specific Location
+      .form-group
+        label(for='desiredCity').control-label City
+          input(type='text', name='desiredCity').form-control
+      .form-group
+        label(for='desiredState').control-label State
+          input(type='text', name='desiredState').form-control
+    .form-group
+      label(for='skills', required).control-label Skills
+      textarea(rows=3, name='skills').form-control
+    fieldset
+      legend='Employment History'
+      // First Employment Entry
+      .form-group
+        label(for='title').control-label Title
+        input(type='text', name='title').form-control
+      .form-group
+        label(for='employer').control-label Employer
+        input(type='text', name='employer').form-control
+      .form-group
+        label(for='city').control-label City
+        input(type='text', name='city').form-control
+      .form-group
+        label(for='state').control-label State
+        input(type='text', name='state').form-control
+      .form-group
+        label(for='description').control-label Description
+        textarea(rows=3, name='description').form-control
+      // Second Employment Entry
+      hr
+      .form-group
+        label(for='title').control-label Title
+        input(type='text', name='title').form-control
+      .form-group
+        label(for='employer').control-label Employer
+        input(type='text', name='employer').form-control
+      .form-group
+        label(for='city').control-label City
+        input(type='text', name='city').form-control
+      .form-group
+        label(for='state').control-label State
+        input(type='text', name='state').form-control
+      .form-group
+        label(for='description').control-label Description
+        textarea(rows=3, name='description').form-control
+      // Third Employment Entry
+      hr
+      .form-group
+        label(for='title').control-label Title
+        input(type='text', name='title').form-control
+      .form-group
+        label(for='employer').control-label Employer
+        input(type='text', name='employer').form-control
+      .form-group
+        label(for='city').control-label City
+        input(type='text', name='city').form-control
+      .form-group
+        label(for='state').control-label State
+        input(type='text', name='state').form-control
+      .form-group
+        label(for='description').control-label Description
+        textarea(rows=3, name='description').form-control
+    button(type='submit').btn.btn-primary Submit
+  footer.row
+    .col-md-12
+      p.text-center.text-muted= incorporation
